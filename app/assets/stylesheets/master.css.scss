@@ -1,6 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background: url('/assets/symphony.png');
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+}
+
+.navbar.navbar-inverse {
+  background: url('/assets/stardust.png');
+  border-radius: 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
