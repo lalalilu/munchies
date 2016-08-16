@@ -17,6 +17,9 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'rails_12factor', group: :production
 
+# Use simple_form to obtain new data entries
+gem 'simple_form'
+
 # For paginating
 gem 'kaminari'
 
