@@ -20,6 +20,10 @@ gem 'rails_12factor', group: :production
 # Use simple_form to obtain new data entries
 gem 'simple_form'
 
+# Add user authentication with Devise
+gem 'devise', '>= 3.2.4'
+
+
 # For paginating
 gem 'kaminari'
 
