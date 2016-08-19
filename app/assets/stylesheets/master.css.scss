@@ -40,3 +40,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
 }
+
+.has-error {
+  color: #f33;
+  background-color: #fee;
+  border-radius: 3px;
+  padding: 8px;
+}
