@@ -42,11 +42,6 @@
 </div>
 
 <div class="clear"></div>
-<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
-  <%= f.input :message %>
-  <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
-  <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
-<% end %>
 
 
 <!-- Button trigger modal -->
@@ -62,12 +57,15 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add a comment</h4>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
+        <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
+        <div class="modal-body">
+          <%= f.input :message %>
+          <%= f.input :rating, as: :select, collection: Comment::RATINGS %>
+        </div>
+        <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
+        <% end %>
       </div>
     </div>
   </div>
