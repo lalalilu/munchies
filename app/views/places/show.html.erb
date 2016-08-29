@@ -86,3 +86,9 @@
     </blockquote>
   </div>
 <% end %>
+
+<%= simple_form_for @photo, url: '#' do |f| %>
+  <%= f.file_field :picture %>
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
