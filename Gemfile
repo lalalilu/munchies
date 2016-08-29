@@ -29,6 +29,8 @@ gem 'simple_form'
 # Add user authentication with Devise
 gem 'devise', '>= 3.2.4'
 
+# Add image field
+gem 'carrierwave'
 
 # For paginating
 gem 'kaminari'

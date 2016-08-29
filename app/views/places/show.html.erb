@@ -5,14 +5,6 @@
   <p><%= @place.description %></p>
 
 
-  <br><br>
-
-  <%= @place.photos.each do |photo| %>
-    <%= photo.caption %>
-    <!--find a way to display photo here-->
-    <%= image_tag place.photo.image_url %>
-
-  <% end %>
 
 <% if @place.latitude.present? && @place.longitude.present? %>
 
@@ -39,6 +31,23 @@
 
   <div id="map"></div>
 <% end %>
+
+
+<br><br>
+
+<%= @place.photos.each do |photo| %>
+  <%= image_tag photo.picture %><br>
+  <%= photo.caption %>
+<% end %>
+
+<div class="clear"></div>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+  <%= f.file_field :picture %>
+  <%= f.input :caption %>
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+<% end %>
+
 
 <br>
 
@@ -94,11 +103,4 @@
       <small><%= comment.user.email %></small>
     </blockquote>
   </div>
-<% end %>
-
-<div class="clear"></div>
-<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-  <%= f.file_field :picture %>
-  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-  <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
 <% end %>
