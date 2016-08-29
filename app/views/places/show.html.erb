@@ -5,6 +5,15 @@
   <p><%= @place.description %></p>
 
 
+  <br><br>
+
+  <%= @place.photos.each do |photo| %>
+    <%= photo.caption %>
+    <!--find a way to display photo here-->
+    <%= image_tag place.photo.image_url %>
+
+  <% end %>
+
 <% if @place.latitude.present? && @place.longitude.present? %>
 
   <script>
@@ -87,7 +96,8 @@
   </div>
 <% end %>
 
-<%= simple_form_for @photo, url: '#' do |f| %>
+<div class="clear"></div>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
   <%= f.file_field :picture %>
   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
