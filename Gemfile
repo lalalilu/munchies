@@ -32,6 +32,9 @@ gem 'devise', '>= 3.2.4'
 # Add image field
 gem 'carrierwave'
 
+# Add fog gem
+gem "fog"
+
 # For paginating
 gem 'kaminari'
 
